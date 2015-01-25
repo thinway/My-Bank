@@ -7,6 +7,6 @@
     <string name="amount_hint">Please enter an amount</string>
     <string name="deposit">DEPOSIT</string>
     <string name="withdraw">WITHDRAW</string>
-    <string name="balance_placeholder">Your Account's Balance</string>
+    <string name="balance_placeholder">Your Account\'s Balance</string>
 
 </resources>

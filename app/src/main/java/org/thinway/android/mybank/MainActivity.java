@@ -20,6 +20,9 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        amountDisplay = (EditText)findViewById(R.id.amount_input);
+        amountDisplay.setText("Hello World!");
     }
 
 
