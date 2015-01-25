@@ -1,7 +1,7 @@
 package org.thinway.android.mybank;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -21,8 +21,10 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        amountDisplay = (EditText)findViewById(R.id.amount_input);
-        amountDisplay.setText("Hello World!");
+        amountInput = (EditText)findViewById(R.id.amount_input);
+        depositButton = (Button)findViewById(R.id.deposit_button);
+        withdrawButton = (Button)findViewById(R.id.withdraw_button);
+        amountDisplay = (TextView)findViewById(R.id.balance_display);
     }
 
 
