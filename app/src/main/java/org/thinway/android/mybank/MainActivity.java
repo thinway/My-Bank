@@ -2,6 +2,7 @@ package org.thinway.android.mybank;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    private static final String TAG = "MainActivity";
 
     EditText amountInput;
     Button depositButton;
@@ -23,6 +26,8 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.d(TAG,"Overdraft is " + BankAccount.overdraftFee);
 
         currentAccount = new BankAccount();
 

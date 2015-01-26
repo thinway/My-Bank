@@ -5,8 +5,8 @@ package org.thinway.android.mybank;
  */
 public class BankAccount {
     private double balance;
-    private static double overdraftFee = 30;
-    
+    public static final double overdraftFee = 30;
+
     public double getBalance() {
         return balance;
     }
