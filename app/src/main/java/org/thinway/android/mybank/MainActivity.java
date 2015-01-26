@@ -17,10 +17,14 @@ public class MainActivity extends ActionBarActivity {
     Button withdrawButton;
     TextView amountDisplay;
 
+    BankAccount currentAccount;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        currentAccount = new BankAccount();
 
         amountInput = (EditText)findViewById(R.id.amount_input);
         depositButton = (Button)findViewById(R.id.deposit_button);
@@ -39,7 +43,8 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 String amount = amountInput.getText().toString();
-                amountDisplay.setText(amount);
+                currentAccount.deposit(Double.parseDouble(amount));
+                amountDisplay.setText("Balance is " + currentAccount.getBalance());
             }
         });
     }
