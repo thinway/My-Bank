@@ -35,7 +35,8 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 String amount = amountInput.getText().toString();
-                amountDisplay.setText(amount);
+                currentAccount.withdraw(Double.parseDouble(amount));
+                amountDisplay.setText("Balance is " + currentAccount.getBalance());
             }
         });
 
