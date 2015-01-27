@@ -7,17 +7,21 @@ public class BankAccount {
     public static final double OVERDRAFT_FEE = 30;
     public static final String TAG = "Bank Account";
 
-    private double aBalance;
+    private double mBalance;
 
     public double getBalance() {
-        return aBalance;
+        return mBalance;
     }
 
     public void withdraw(double amount){
-        aBalance -= amount;
+        mBalance -= amount;
+
+        if (mBalance < 0) {
+            mBalance -= OVERDRAFT_FEE;
+        }
     }
 
     public void deposit(double amount){
-        aBalance += amount;
+        mBalance += amount;
     }
 }
