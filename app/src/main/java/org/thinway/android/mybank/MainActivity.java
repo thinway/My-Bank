@@ -15,10 +15,10 @@ public class MainActivity extends ActionBarActivity {
 
     private static final String TAG = "MainActivity";
 
-    EditText amountInput;
-    Button depositButton;
-    Button withdrawButton;
-    TextView amountDisplay;
+    EditText mAmountInput;
+    Button mDepositButton;
+    Button mWithdrawButton;
+    TextView mAmountDisplay;
 
     BankAccount currentAccount;
 
@@ -27,30 +27,30 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.d(TAG,"Overdraft is " + BankAccount.overdraftFee);
+        Log.d(TAG,"Overdraft is " + BankAccount.OVERDRAFT_FEE);
 
         currentAccount = new BankAccount();
 
-        amountInput = (EditText)findViewById(R.id.amount_input);
-        depositButton = (Button)findViewById(R.id.deposit_button);
-        withdrawButton = (Button)findViewById(R.id.withdraw_button);
-        amountDisplay = (TextView)findViewById(R.id.balance_display);
+        mAmountInput = (EditText)findViewById(R.id.amount_input);
+        mDepositButton = (Button)findViewById(R.id.deposit_button);
+        mWithdrawButton = (Button)findViewById(R.id.withdraw_button);
+        mAmountDisplay = (TextView)findViewById(R.id.balance_display);
 
-        withdrawButton.setOnClickListener(new View.OnClickListener() {
+        mWithdrawButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String amount = amountInput.getText().toString();
+                String amount = mAmountInput.getText().toString();
                 currentAccount.withdraw(Double.parseDouble(amount));
-                amountDisplay.setText("Balance is " + currentAccount.getBalance());
+                mAmountDisplay.setText("Balance is " + currentAccount.getBalance());
             }
         });
 
-        depositButton.setOnClickListener(new View.OnClickListener() {
+        mDepositButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String amount = amountInput.getText().toString();
+                String amount = mAmountInput.getText().toString();
                 currentAccount.deposit(Double.parseDouble(amount));
-                amountDisplay.setText("Balance is " + currentAccount.getBalance());
+                mAmountDisplay.setText("Balance is " + currentAccount.getBalance());
             }
         });
     }
